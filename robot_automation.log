@@ -1,0 +1,83 @@
+2025-07-04 15:10:08,365 - INFO - Worker initialized successfully
+2025-07-04 15:10:08,365 - INFO - Worker started and waiting for jobs...
+2025-07-04 15:12:42,491 - INFO - Worker initialized successfully
+2025-07-04 15:12:42,491 - INFO - Worker initialized successfully
+2025-07-04 15:15:12,150 - INFO - Created job d4a01667-537d-4bc6-8eac-6b48877c8754 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:15:12,150 - INFO - Processing job d4a01667-537d-4bc6-8eac-6b48877c8754 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:15:12,151 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 15:15:12,151 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 15:15:42,418 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 15:15:50,753 - INFO - Worker initialized successfully
+2025-07-04 15:15:50,753 - INFO - Worker started and waiting for jobs...
+2025-07-04 15:48:41,929 - INFO - Created job 31b6502f-060c-4f73-9c53-858a4675b261 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:48:41,932 - INFO - Processing job 31b6502f-060c-4f73-9c53-858a4675b261 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:48:41,934 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 15:48:41,934 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 15:49:12,339 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 15:50:34,765 - INFO - Worker stopped
+2025-07-04 15:50:34,765 - INFO - Worker stopped successfully
+2025-07-04 15:50:36,711 - INFO - Worker initialized successfully
+2025-07-04 15:50:36,711 - INFO - Worker initialized successfully
+2025-07-04 15:50:48,004 - INFO - Created job 42bd1214-c170-43be-b858-665dc3a456a6 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:50:57,678 - INFO - Worker initialized successfully
+2025-07-04 15:50:57,678 - INFO - Worker started and waiting for jobs...
+2025-07-04 15:50:57,682 - INFO - Processing job 42bd1214-c170-43be-b858-665dc3a456a6 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:50:57,682 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 15:50:57,682 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 15:51:19,928 - INFO - Attempt 1 to prepare Logic Pro window
+2025-07-04 15:51:26,014 - INFO - Logic Pro window ready and verified
+2025-07-04 15:51:28,240 - INFO - Attempt 1 to prepare Logic Pro window
+2025-07-04 15:51:34,002 - INFO - Logic Pro window ready and verified
+2025-07-04 15:55:34,530 - INFO - Worker initialized successfully
+2025-07-04 15:55:34,530 - INFO - Worker started and waiting for jobs...
+2025-07-04 15:55:38,952 - INFO - Worker stopped
+2025-07-04 15:55:38,953 - INFO - Worker stopped successfully
+2025-07-04 15:55:40,871 - INFO - Worker initialized successfully
+2025-07-04 15:55:40,871 - INFO - Worker initialized successfully
+2025-07-04 15:55:43,261 - INFO - Created job 54948637-9e05-44e9-ac9e-f57742399a92 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:55:43,261 - INFO - Processing job 54948637-9e05-44e9-ac9e-f57742399a92 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 15:55:43,261 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 15:55:43,262 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 15:56:40,596 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:00:52,418 - INFO - ✅ Stem Splitter completed. Starting export: Tracklib - Won't Be Around_mix
+2025-07-04 16:00:56,958 - INFO - 📁 Export started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:01:52,851 - INFO - ✅ Tracklib - Won't Be Around_mix processed and exported!
+2025-07-04 16:01:52,853 - ERROR - No exported files found for Tracklib - Won't Be Around_mix in /Users/moises/Music/Logic
+2025-07-04 16:01:52,902 - INFO - Cleaned up folder: /Users/moises/Music/Logic
+2025-07-04 16:01:52,902 - INFO - Job 54948637-9e05-44e9-ac9e-f57742399a92 completed with status: completed_with_errors
+2025-07-04 16:01:53,649 - INFO - Callback sent successfully to http://your-callback-url.com/webhook
+2025-07-04 16:10:28,255 - INFO - Created job 6482eb50-b1b1-49c1-ba05-1f1954fa68e2 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 16:10:28,255 - INFO - Processing job 6482eb50-b1b1-49c1-ba05-1f1954fa68e2 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 16:10:28,256 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 16:10:28,257 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 16:11:25,619 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:15:37,391 - INFO - ✅ Stem Splitter completed. Starting export: Tracklib - Won't Be Around_mix
+2025-07-04 16:15:41,937 - INFO - 📁 Export started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:16:37,860 - INFO - ✅ Tracklib - Won't Be Around_mix processed and exported!
+2025-07-04 16:16:37,863 - ERROR - No exported files found for Tracklib - Won't Be Around_mix in /Users/moises/Music/Logic
+2025-07-04 16:16:37,933 - INFO - Cleaned up folder: /Users/moises/Music/Logic
+2025-07-04 16:16:37,933 - INFO - Job 6482eb50-b1b1-49c1-ba05-1f1954fa68e2 completed with status: completed_with_errors
+2025-07-04 16:16:38,859 - INFO - Callback sent successfully to https://webhook.site/acd71b85-d7f4-4d94-99b2-74c01ba4fa8f
+2025-07-04 16:33:49,284 - INFO - Created job fd35e193-aec3-49a3-8cd7-5395dec4f715 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 16:33:49,284 - INFO - Processing job fd35e193-aec3-49a3-8cd7-5395dec4f715 for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 16:33:49,285 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 16:33:49,285 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 16:34:43,345 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:38:55,122 - INFO - ✅ Stem Splitter completed. Starting export: Tracklib - Won't Be Around_mix
+2025-07-04 16:38:59,669 - INFO - 📁 Export started for: Tracklib - Won't Be Around_mix
+2025-07-04 16:39:58,961 - INFO - ✅ Tracklib - Won't Be Around_mix processed and exported!
+2025-07-04 16:39:58,962 - INFO - Found 6 exported files for Tracklib - Won't Be Around_mix
+2025-07-04 16:39:58,962 - INFO - Job fd35e193-aec3-49a3-8cd7-5395dec4f715 completed with status: completed
+2025-07-04 16:39:59,887 - INFO - Callback sent successfully to https://webhook.site/acd71b85-d7f4-4d94-99b2-74c01ba4fa8f
+2025-07-04 17:00:28,290 - INFO - Processing job 7e120afb-303e-475b-9364-23c2f5f23fed for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 17:00:28,290 - INFO - Created job 7e120afb-303e-475b-9364-23c2f5f23fed for folder: /Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix
+2025-07-04 17:00:28,291 - INFO - Processing folder: Tracklib - Won't Be Around_mix
+2025-07-04 17:00:28,291 - INFO - Starting processing: Tracklib - Won't Be Around_mix
+2025-07-04 17:01:22,428 - INFO - 🔄 Stem Splitter started for: Tracklib - Won't Be Around_mix
+2025-07-04 17:05:34,192 - INFO - ✅ Stem Splitter completed. Starting export: Tracklib - Won't Be Around_mix
+2025-07-04 17:05:38,728 - INFO - 📁 Export started for: Tracklib - Won't Be Around_mix
+2025-07-04 17:06:34,613 - INFO - ✅ Tracklib - Won't Be Around_mix processed and exported!
+2025-07-04 17:06:34,615 - ERROR - No exported files found for Tracklib - Won't Be Around_mix in /Users/moises/Music/Logic
+2025-07-04 17:06:34,713 - INFO - Cleaned up folder: /Users/moises/Music/Logic
+2025-07-04 17:06:34,713 - INFO - Job 7e120afb-303e-475b-9364-23c2f5f23fed completed with status: completed_with_errors
+2025-07-04 17:06:35,639 - INFO - Callback sent successfully to https://webhook.site/acd71b85-d7f4-4d94-99b2-74c01ba4fa8f

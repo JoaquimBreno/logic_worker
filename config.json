@@ -1,0 +1,9 @@
+{
+  "cleanup_folder": "/Users/moises/Music/Logic",
+  "log_folder": "./logs",
+  "redis_url": "redis://localhost:6379",
+  "webhook_port": 3000,
+  "processing_timeout": 300000,
+  "export_timeout": 60000,
+  "stem_split_timeout": 240000
+} 
