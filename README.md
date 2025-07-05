@@ -59,8 +59,9 @@ python webhook_server.py
 curl -X POST "http://localhost:3000/process" \
   -H "Content-Type: application/json" \
   -d '{
-    "input_folder": "/Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix",
-    "callback_url": "http://your-callback-url.com/webhook"
+    "input_bucket_path": "benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)",
+    "output_bucket_path": "benchmarks-musicai-gt/teste",
+    "callback_url": "https://webhook.site/your-webhook-id"
   }'
 ```
 
@@ -69,8 +70,9 @@ curl -X POST "http://localhost:3000/process" \
 {
   "execution_id": "123e4567-e89b-12d3-a456-426614174000",
   "status": "queued",
-  "message": "Job created successfully. Processing folder: Tracklib - Won't Be Around_mix",
-  "folder_name": "Tracklib - Won't Be Around_mix"
+  "message": "Job created successfully",
+  "input_bucket_path": "benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)",
+  "output_bucket_path": "benchmarks-musicai-gt/teste"
 }
 ```
 
@@ -85,46 +87,46 @@ curl "http://localhost:3000/status/123e4567-e89b-12d3-a456-426614174000"
 {
   "execution_id": "123e4567-e89b-12d3-a456-426614174000",
   "status": "processing",
-  "input_folder": "/Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix",
-  "folder_name": "Tracklib - Won't Be Around_mix",
+  "input_bucket_path": "benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)",
+  "output_bucket_path": "benchmarks-musicai-gt/teste",
   "errors": [],
   "results": [
     {
       "status": "success",
-      "folder": "Tracklib - Won't Be Around_mix",
       "message": "Processing and export completed successfully",
       "export_verified": true
     }
   ],
   "created_at": "2023-12-01T10:00:00",
-  "callback_url": "http://your-callback-url.com/webhook"
+  "callback_url": "https://webhook.site/your-webhook-id"
 }
 ```
 
-### 5. Scan de Pasta (Preview)
+### 5. Scan de Bucket (Preview)
 
 ```bash
-curl "http://localhost:3000/scan?folder_path=/Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix"
+curl "http://localhost:3000/scan?bucket_path=benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)"
 ```
 
 ## Endpoints da API
 
 - `POST /process` - Criar novo job de processamento
 - `GET /status/{execution_id}` - Verificar status do job
-- `GET /scan` - Escanear pasta para preview
+- `GET /scan` - Escanear bucket para preview
 - `GET /health` - Health check
 - `GET /` - Informações da API
 
 ## Funcionamento
 
-1. **Recepção**: API recebe pasta com arquivo `_mix.wav` e callback URL opcional
-2. **Escaneamento**: Sistema verifica se a pasta contém apenas um arquivo `_mix.wav`
-3. **Validação**: Só processa se a pasta contém apenas arquivos `_mix.wav` (sem outros `.wav`)
+1. **Recepção**: API recebe paths dos buckets de entrada/saída e callback URL opcional
+2. **Escaneamento**: Sistema verifica se o bucket de entrada contém os arquivos necessários
+3. **Validação**: Valida a estrutura dos arquivos no bucket de entrada
 4. **Fila**: Job é adicionado à fila BullMQ (1 processo por vez)
 5. **Processamento**: Robot abre Logic Pro, executa stem splitting e exporta
-6. **Verificação**: Confirma se arquivos foram exportados para `/Users/moises/Music/Logic`
-7. **Callback**: Quando concluído, envia resultado para callback URL (se fornecido)
-8. **Limpeza**: Em caso de erro, limpa pasta `/Users/moises/Music/Logic`
+6. **Verificação**: Confirma se arquivos foram exportados corretamente
+7. **Upload**: Faz upload dos arquivos processados para o bucket de saída
+8. **Callback**: Quando concluído, envia resultado para callback URL (se fornecido)
+9. **Limpeza**: Em caso de erro, limpa arquivos temporários
 
 ## Status Possíveis
 
@@ -145,18 +147,13 @@ Os logs são salvos em:
 
 - **Erros de automação**: Repassados no JSON como "error"
 - **Verificação de exportação**: Confirma se arquivos foram exportados corretamente
-- **Falhas críticas**: Limpeza automática da pasta configurada
+- **Falhas críticas**: Limpeza automática dos arquivos temporários
 - **Timeouts**: Configuráveis no `config.json`
 - **Fila**: Apenas 1 processo simultâneo para evitar conflitos
 
-## Estrutura de Pasta Esperada
+## Estrutura do Bucket de Entrada
 
-```
-/Tracklib - Won't Be Around_mix/
-└── Tracklib - Won't Be Around_mix.wav
-```
-
-O sistema agora processa uma única pasta que contém um arquivo `_mix.wav`. O nome da pasta é salvo no JSON para controle futuro.
+O bucket de entrada deve conter os arquivos necessários para o processamento. O sistema validará a estrutura antes de iniciar o processamento.
 
 ## Exemplo de Callback
 
@@ -166,12 +163,12 @@ Quando o processamento é concluído, o sistema envia um POST para a callback UR
 {
   "execution_id": "123e4567-e89b-12d3-a456-426614174000",
   "status": "completed",
-  "folder_name": "Tracklib - Won't Be Around_mix",
+  "input_bucket_path": "benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)",
+  "output_bucket_path": "benchmarks-musicai-gt/teste",
   "errors": [],
   "results": [
     {
       "status": "success",
-      "folder": "Tracklib - Won't Be Around_mix",
       "message": "Processing and export completed successfully",
       "export_verified": true
     }
@@ -182,4 +179,4 @@ Quando o processamento é concluído, o sistema envia um POST para a callback UR
 
 ## Verificação de Exportação
 
-O sistema agora verifica automaticamente se os arquivos foram exportados corretamente para a pasta `/Users/moises/Music/Logic`. Se a verificação falhar, o job é marcado como erro mesmo que o processamento tenha aparentemente funcionado. 
+O sistema verifica automaticamente se os arquivos foram exportados corretamente antes de fazer o upload para o bucket de saída. Se a verificação falhar, o job é marcado como erro mesmo que o processamento tenha aparentemente funcionado. 
