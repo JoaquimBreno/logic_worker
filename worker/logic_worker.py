@@ -11,7 +11,8 @@ from dataclasses import dataclass
 from redis.asyncio import Redis, ConnectionPool
 from redis.exceptions import RedisError
 import aiohttp
-
+from utils.download import download_gcp_folder
+from utils.upload import upload_stems_to_gcp
 # Import the robot
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -34,13 +35,16 @@ logging.basicConfig(
 @dataclass
 class ProcessingJob:
     execution_id: str
-    input_folder: str
+    input_bucket_path: str
+    output_bucket_path: str
     callback_url: Optional[str]
     created_at: datetime
     status: str = "pending"
     folder_name: str = ""
     errors: List[Dict[str, Any]] = None
     results: List[Dict[str, Any]] = None
+    processed_stems_path: Optional[str] = None
+    temp_dir: Optional[Any] = None  # TemporaryDirectory instance
 
     def __post_init__(self):
         if self.errors is None:
@@ -145,25 +149,49 @@ class LogicWorker:
 
     async def process_job(self, job_data: Dict[str, Any]):
         """Process a single job from the queue"""
+        temp_dir = None
         try:
             execution_id = job_data['execution_id']
-            input_folder = job_data['input_folder']
+            input_bucket_path = job_data['input_bucket_path']
+            output_bucket_path = job_data['output_bucket_path']
             callback_url = job_data.get('callback_url')
             
-            self.logger.info(f"Processing job {execution_id} for folder: {input_folder}")
+            self.logger.info(f"Processing job {execution_id} from bucket: {input_bucket_path}")
             
             # Update job status
             processing_job = ProcessingJob(
                 execution_id=execution_id,
-                input_folder=input_folder,
+                input_bucket_path=input_bucket_path,
+                output_bucket_path=output_bucket_path,
                 callback_url=callback_url,
                 created_at=datetime.now(),
                 status="processing"
             )
             self.jobs_status[execution_id] = processing_job
             
-            # Scan the input folder
-            scan_result = self.scan_input_folder(input_folder)
+            # Download from GCP bucket
+            try:
+                temp_path, temp_dir = download_gcp_folder(input_bucket_path)
+                processing_job.temp_dir = temp_dir
+                print(f"Temp dir: {temp_dir}")
+                print(f"Temp path: {temp_path}")
+                self.logger.info(f"Downloaded files to temp folder: {temp_path}")
+            except Exception as e:
+                processing_job.status = "error"
+                processing_job.errors.append({
+                    "error": f"Failed to download from GCP: {str(e)}",
+                    "timestamp": datetime.now().isoformat()
+                })
+                if callback_url:
+                    await self.send_callback(callback_url, {
+                        "execution_id": execution_id,
+                        "status": "error",
+                        "error": f"Download failed: {str(e)}"
+                    })
+                return
+            
+            # Scan the downloaded folder
+            scan_result = self.scan_input_folder(temp_path)
             
             if scan_result["status"] == "error":
                 processing_job.status = "error"
@@ -216,6 +244,48 @@ class LogicWorker:
                     # If any error occurs, cleanup
                     await self.cleanup_logic_folder()
                     
+                else:
+                    # If processing was successful, move stems to temp folder and upload
+                    try:   
+                        # Move stems from Logic folder to temp folder
+                        logic_folder = config['cleanup_folder']
+                        temp_stems_folder = os.path.join(temp_path, 'stems')
+                        os.makedirs(temp_stems_folder, exist_ok=True)
+                        
+                        # Move all wav files
+                        for file in os.listdir(logic_folder):
+                            if file.endswith('.wav'):
+                                src = os.path.join(logic_folder, file)
+                                dst = os.path.join(temp_stems_folder, file)
+                                shutil.move(src, dst)
+                        
+                        # Upload stems to GCP
+                        upload_result = upload_stems_to_gcp(
+                            local_folder=temp_stems_folder,
+                            bucket_path=output_bucket_path
+                        )
+                        
+                        if upload_result["status"] == "success":
+                            processing_job.processed_stems_path = upload_result["gcp_path"]
+                            result["uploaded_stems"] = upload_result
+                        else:
+                            processing_job.errors.append({
+                                "folder": folder_info["name"],
+                                "error": f"Failed to upload stems: {upload_result['message']}",
+                                "timestamp": datetime.now().isoformat()
+                            })
+                        
+                    except Exception as e:
+                        self.logger.error(f"Error handling stems: {str(e)}")
+                        processing_job.errors.append({
+                            "folder": folder_info["name"],
+                            "error": f"Failed to handle stems: {str(e)}",
+                            "timestamp": datetime.now().isoformat()
+                        })
+                    
+                    # Cleanup Logic folder
+                    await self.cleanup_logic_folder()
+                    
             except Exception as e:
                 self.logger.error(f"Error processing folder {folder_info['name']}: {str(e)}")
                 processing_job.errors.append({
@@ -243,6 +313,7 @@ class LogicWorker:
                     "folder_name": processing_job.folder_name,
                     "errors": processing_job.errors,
                     "results": processing_job.results,
+                    "processed_stems_path": processing_job.processed_stems_path,
                     "completed_at": datetime.now().isoformat()
                 }
                 await self.send_callback(callback_url, callback_data)
@@ -257,7 +328,7 @@ class LogicWorker:
                     "error": str(e),
                     "timestamp": datetime.now().isoformat()
                 })
-                
+            
             # Cleanup on critical error
             await self.cleanup_logic_folder()
             
@@ -269,25 +340,26 @@ class LogicWorker:
                     "status": "error",
                     "error": str(e)
                 })
+        finally:
+            # Always cleanup temp directory if it exists
+            if temp_dir:
+                temp_dir.cleanup()
 
-    async def create_job(self, input_folder: str, callback_url: Optional[str] = None) -> str:
+    async def create_job(
+        self, 
+        input_bucket_path: str,
+        output_bucket_path: str,
+        callback_url: Optional[str] = None
+    ) -> str:
         """Create a new processing job"""
         try:
             execution_id = str(uuid.uuid4())
             
-            # First scan to validate input
-            scan_result = self.scan_input_folder(input_folder)
-            
-            if scan_result["status"] == "error":
-                raise Exception(scan_result["error"])
-            
-            if not scan_result["processable"]:
-                raise Exception("Folder is not processable - contains other .wav files or no _mix.wav file")
-            
             # Create job in queue
             job_data = {
                 "execution_id": execution_id,
-                "input_folder": input_folder,
+                "input_bucket_path": input_bucket_path,
+                "output_bucket_path": output_bucket_path,
                 "callback_url": callback_url,
                 "created_at": datetime.now().isoformat()
             }
@@ -298,15 +370,15 @@ class LogicWorker:
             # Initialize job status
             processing_job = ProcessingJob(
                 execution_id=execution_id,
-                input_folder=input_folder,
+                input_bucket_path=input_bucket_path,
+                output_bucket_path=output_bucket_path,
                 callback_url=callback_url,
                 created_at=datetime.now(),
-                status="queued",
-                folder_name=scan_result["folder_info"]["name"]
+                status="queued"
             )
             self.jobs_status[execution_id] = processing_job
             
-            self.logger.info(f"Created job {execution_id} for folder: {input_folder}")
+            self.logger.info(f"Created job {execution_id} for bucket path: {input_bucket_path}")
             
             return execution_id
             
@@ -323,12 +395,14 @@ class LogicWorker:
         return {
             "execution_id": job.execution_id,
             "status": job.status,
-            "input_folder": job.input_folder,
+            "input_bucket_path": job.input_bucket_path,
+            "output_bucket_path": job.output_bucket_path,
             "folder_name": job.folder_name,
             "errors": job.errors,
             "results": job.results,
             "created_at": job.created_at.isoformat(),
-            "callback_url": job.callback_url
+            "callback_url": job.callback_url,
+            "processed_stems_path": job.processed_stems_path
         }
 
     async def process_queue(self):

@@ -25,7 +25,8 @@ logging.basicConfig(
 app = FastAPI(title="Logic Worker API", version="1.0.0")
 
 class ProcessingRequest(BaseModel):
-    input_folder: str = Field(..., description="Path to the folder containing a _mix.wav file")
+    input_bucket_path: str = Field(..., description="GCP bucket path containing the _mix.wav file (e.g. 'bucket-name/folder')")
+    output_bucket_path: str = Field(..., description="GCP bucket path where processed stems should be uploaded")
     callback_url: Optional[str] = Field(None, description="Optional callback URL to notify when processing is complete")
 
 class ProcessingResponse(BaseModel):
@@ -33,16 +34,20 @@ class ProcessingResponse(BaseModel):
     status: str
     message: str
     folder_name: str
+    input_bucket_path: str
+    output_bucket_path: str
 
 class StatusResponse(BaseModel):
     execution_id: str
     status: str
-    input_folder: str
+    input_bucket_path: str
+    output_bucket_path: str
     folder_name: str
     errors: list
     results: list
     created_at: str
     callback_url: Optional[str]
+    processed_stems_path: Optional[str] = None
 
 @app.on_event("startup")
 async def startup_event():
@@ -68,33 +73,29 @@ async def create_processing_job(request: ProcessingRequest):
     """
     Create a new processing job
     
-    This endpoint accepts a folder path and optional callback URL.
-    It will scan the folder for a _mix.wav file and create a job in the queue.
+    This endpoint accepts:
+    - input_bucket_path: GCP bucket path containing the _mix.wav file
+    - output_bucket_path: GCP bucket path where processed stems should be uploaded
+    - callback_url: Optional URL for status updates
     """
     try:
-        # Validate input folder first
-        scan_result = worker_instance.scan_input_folder(request.input_folder)
-        
-        if scan_result["status"] == "error":
-            raise HTTPException(status_code=400, detail=scan_result["error"])
-        
-        if not scan_result["processable"]:
-            raise HTTPException(
-                status_code=400, 
-                detail="Folder is not processable - contains other .wav files or no _mix.wav file"
-            )
-        
-        # Create the job
+        # Create the job with bucket paths
         execution_id = await worker_instance.create_job(
-            input_folder=request.input_folder,
+            input_bucket_path=request.input_bucket_path,
+            output_bucket_path=request.output_bucket_path,
             callback_url=request.callback_url
         )
+        
+        # Get initial job status
+        job_status = worker_instance.get_job_status(execution_id)
         
         return ProcessingResponse(
             execution_id=execution_id,
             status="queued",
-            message=f"Job created successfully. Processing folder: {scan_result['folder_info']['name']}",
-            folder_name=scan_result['folder_info']['name']
+            message=f"Job created successfully. Will process from bucket: {request.input_bucket_path}",
+            folder_name=job_status['folder_name'] if job_status.get('folder_name') else '',
+            input_bucket_path=request.input_bucket_path,
+            output_bucket_path=request.output_bucket_path
         )
         
     except HTTPException:
@@ -126,16 +127,24 @@ async def get_job_status(execution_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/scan")
-async def scan_folder(folder_path: str):
+async def scan_folder(bucket_path: str):
     """
-    Scan a folder to see if it can be processed
+    Scan a GCP bucket folder to see if it can be processed
     
     This is a utility endpoint to preview if a folder can be processed
     without actually creating a job.
     """
     try:
-        scan_result = worker_instance.scan_input_folder(folder_path)
-        return scan_result
+        from utils.download import download_gcp_folder
+        
+        # Download files to temp directory
+        temp_path, temp_dir = download_gcp_folder(bucket_path)
+        
+        try:
+            scan_result = worker_instance.scan_input_folder(temp_path)
+            return scan_result
+        finally:
+            temp_dir.cleanup()
         
     except Exception as e:
         logging.error(f"Error scanning folder: {str(e)}")
@@ -159,7 +168,7 @@ async def root():
         "endpoints": {
             "POST /process": "Create a new processing job",
             "GET /status/{execution_id}": "Get job status",
-            "GET /scan": "Scan folder for processable files",
+            "GET /scan": "Scan GCP bucket folder for processable files",
             "GET /health": "Health check"
         }
     }

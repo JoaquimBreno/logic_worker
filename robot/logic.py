@@ -110,10 +110,6 @@ class LogicRobot:
     async def ensure_logic_pro_ready(self) -> bool:
         """Ensure Logic Pro is focused and in Space 1"""
         try:
-            # First move everything to Space 1
-            if not await self.move_to_space_one():
-                return False
-                
             # Then focus Logic Pro
             if not await self.focus_logic_pro():
                 return False
@@ -241,17 +237,11 @@ class LogicRobot:
                 self.logger.info(f"🔄 Stem Splitter started for: {folder_name}")
                 await asyncio.sleep(240)  # Wait for processing
                 
-                # Ensure we're in Space 1 before export
-                await self.move_to_space_one()
-                await self.ensure_logic_pro_ready()
-                
                 self.logger.info(f"✅ Stem Splitter completed. Starting export: {folder_name}")
                 
                 # Export sequence
-                pyautogui.hotkey('command', 'e')  # File > Export shortcut
+                pyautogui.hotkey('command', 'r')  # File > Export shortcut
                 await asyncio.sleep(2)
-                pyautogui.press('A')
-                await asyncio.sleep(1)
                 pyautogui.press('enter')
                 await asyncio.sleep(1)
                 pyautogui.press('enter')

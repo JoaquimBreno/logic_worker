@@ -81,3 +81,718 @@
 2025-07-04 17:06:34,713 - INFO - Cleaned up folder: /Users/moises/Music/Logic
 2025-07-04 17:06:34,713 - INFO - Job 7e120afb-303e-475b-9364-23c2f5f23fed completed with status: completed_with_errors
 2025-07-04 17:06:35,639 - INFO - Callback sent successfully to https://webhook.site/acd71b85-d7f4-4d94-99b2-74c01ba4fa8f
+2025-07-05 14:43:37,190 - INFO - Worker stopped
+2025-07-05 14:43:37,194 - INFO - Worker stopped successfully
+2025-07-05 14:43:39,352 - INFO - Worker initialized successfully
+2025-07-05 14:43:39,352 - INFO - Worker initialized successfully
+2025-07-05 14:44:30,227 - INFO - Worker initialized successfully
+2025-07-05 14:44:30,227 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:04:45,399 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpuvq9k93h
+2025-07-05 15:04:45,400 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpuvq9k93h
+2025-07-05 15:04:46,490 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:04:46,490 - ERROR - Error downloading from GCP bucket: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:04:46,491 - ERROR - Error creating processing job: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:05:00,516 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpoazupd3_
+2025-07-05 15:05:00,519 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpoazupd3_
+2025-07-05 15:05:01,426 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:05:01,426 - ERROR - Error downloading from GCP bucket: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:05:01,427 - ERROR - Error creating processing job: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+ServiceException: 401 Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object. Permission 'storage.objects.get' denied on resource (or it may not exist).
+CommandException: 1 file/object could not be transferred.
+
+2025-07-05 15:05:14,011 - INFO - Worker initialized successfully
+2025-07-05 15:05:14,011 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:05:18,071 - INFO - Worker stopped
+2025-07-05 15:05:18,072 - INFO - Worker stopped successfully
+2025-07-05 15:05:19,953 - INFO - Worker initialized successfully
+2025-07-05 15:05:19,953 - INFO - Worker initialized successfully
+2025-07-05 15:05:23,590 - INFO - Created job 36a6745a-4124-43cc-8adc-8dd98d2e0270 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:05:23,590 - INFO - Processing job 36a6745a-4124-43cc-8adc-8dd98d2e0270 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:05:23,603 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpo9gmdh9f
+2025-07-05 15:05:23,603 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpo9gmdh9f
+2025-07-05 15:05:39,360 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][  1.3 MiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 23.7 MiB/219.3 MiB]  10% Done                                    
+|
+/
+/ [0/6 files][ 51.3 MiB/219.3 MiB]  23% Done                                    
+-
+- [1/6 files][ 71.4 MiB/219.3 MiB]  32% Done                                    
+\
+|
+| [1/6 files][ 95.6 MiB/219.3 MiB]  43% Done                                    
+/
+/ [2/6 files][108.7 MiB/219.3 MiB]  49% Done                                    
+-
+- [2/6 files][124.4 MiB/219.3 MiB]  56% Done                                    
+\
+\ [3/6 files][135.7 MiB/219.3 MiB]  61% Done                                    
+|
+/
+/ [3/6 files][143.2 MiB/219.3 MiB]  65% Done                                    
+-
+- [3/6 files][157.1 MiB/219.3 MiB]  71% Done                                    
+\
+|
+| [3/6 files][185.0 MiB/219.3 MiB]  84% Done                                    
+| [4/6 files][186.2 MiB/219.3 MiB]  84% Done                                    
+/
+/ [5/6 files][201.4 MiB/219.3 MiB]  91% Done                                    
+-
+\
+\ [5/6 files][206.5 MiB/219.3 MiB]  94% Done  15.0 MiB/s ETA 00:00:01           
+|
+| [5/6 files][211.2 MiB/219.3 MiB]  96% Done  13.8 MiB/s ETA 00:00:01           
+/
+-
+- [6/6 files][219.3 MiB/219.3 MiB] 100% Done  13.8 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:05:39,436 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:05:39,436 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:05:39,436 - INFO -   - Channels: 2
+2025-07-05 15:05:39,436 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:05:39,479 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:05:39,480 - INFO - Removed 5 non-mix files:
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:05:39,480 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:05:39,480 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/tmpo9gmdh9f
+2025-07-05 15:05:40,073 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:11:07,914 - INFO - Worker initialized successfully
+2025-07-05 15:11:07,914 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:11:11,265 - INFO - Processing job 5de3371d-a112-461c-b9b1-04cd059a1c48 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:11:11,265 - INFO - Created job 5de3371d-a112-461c-b9b1-04cd059a1c48 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:11:11,266 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpva5aha6d
+2025-07-05 15:11:11,266 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpva5aha6d
+2025-07-05 15:11:23,194 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][  1.0 MiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 29.4 MiB/219.3 MiB]  13% Done                                    
+|
+/
+/ [0/6 files][ 57.8 MiB/219.3 MiB]  26% Done                                    
+-
+\
+\ [0/6 files][ 86.1 MiB/219.3 MiB]  39% Done                                    
+\ [1/6 files][ 87.1 MiB/219.3 MiB]  39% Done                                    
+|
+| [1/6 files][108.2 MiB/219.3 MiB]  49% Done                                    
+/
+-
+- [1/6 files][138.6 MiB/219.3 MiB]  63% Done                                    
+\
+\ [2/6 files][153.6 MiB/219.3 MiB]  70% Done                                    
+|
+/
+/ [2/6 files][177.8 MiB/219.3 MiB]  81% Done                                    
+/ [3/6 files][181.9 MiB/219.3 MiB]  82% Done                                    
+-
+- [4/6 files][197.5 MiB/219.3 MiB]  90% Done                                    
+\
+|
+| [5/6 files][212.2 MiB/219.3 MiB]  96% Done                                    
+/
+/ [6/6 files][219.3 MiB/219.3 MiB] 100% Done                                    
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:11:23,246 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:11:23,247 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:11:23,247 - INFO -   - Channels: 2
+2025-07-05 15:11:23,247 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:11:23,250 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:11:23,250 - INFO - Removed 5 non-mix files:
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:11:23,250 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:11:23,250 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/tmpva5aha6d
+2025-07-05 15:11:23,862 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:14:46,340 - INFO - Worker initialized successfully
+2025-07-05 15:14:46,340 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:14:50,133 - INFO - Processing job 6ec345a1-66ab-4677-a572-9d269b1620bd from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:14:50,133 - INFO - Created job 6ec345a1-66ab-4677-a572-9d269b1620bd for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:14:50,133 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:14:50,133 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:14:51,967 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: 6 files/objects could not be transferred.
+
+2025-07-05 15:14:51,968 - ERROR - Error downloading from GCP bucket: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: 6 files/objects could not be transferred.
+
+2025-07-05 15:14:52,541 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:15:11,450 - INFO - Worker initialized successfully
+2025-07-05 15:15:11,450 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:20:09,117 - INFO - Worker initialized successfully
+2025-07-05 15:20:09,117 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:20:11,082 - INFO - Created job cdda749e-d7e8-4342-bb97-68a094f94eb4 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:20:11,082 - INFO - Processing job cdda749e-d7e8-4342-bb97-68a094f94eb4 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:20:11,083 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:20:11,083 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:20:12,866 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: 6 files/objects could not be transferred.
+
+2025-07-05 15:20:12,866 - ERROR - Error downloading from GCP bucket: gsutil error (code 1): If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: Destination URL must name a directory, bucket, or bucket
+subdirectory for the multiple source form of the cp command.
+CommandException: 6 files/objects could not be transferred.
+
+2025-07-05 15:20:13,484 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:21:21,310 - INFO - Worker initialized successfully
+2025-07-05 15:21:21,310 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:21:23,363 - INFO - Created job d2a1c473-8ff8-4e66-ba86-a2f04c832e80 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:21:23,363 - INFO - Processing job d2a1c473-8ff8-4e66-ba86-a2f04c832e80 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:21:23,364 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpp8u7phqx
+2025-07-05 15:21:23,364 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpp8u7phqx
+2025-07-05 15:21:42,635 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][528.0 KiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 12.6 MiB/219.3 MiB]   5% Done                                    
+|
+/
+/ [0/6 files][ 26.0 MiB/219.3 MiB]  11% Done                                    
+-
+\
+\ [0/6 files][ 38.4 MiB/219.3 MiB]  17% Done                                    
+|
+| [0/6 files][ 50.0 MiB/219.3 MiB]  22% Done                                    
+/
+-
+- [0/6 files][ 62.9 MiB/219.3 MiB]  28% Done                                    
+\
+\ [0/6 files][ 76.6 MiB/219.3 MiB]  34% Done                                    
+|
+/
+/ [0/6 files][ 89.5 MiB/219.3 MiB]  40% Done                                    
+-
+\
+\ [0/6 files][104.9 MiB/219.3 MiB]  47% Done                                    
+|
+| [0/6 files][123.2 MiB/219.3 MiB]  56% Done                                    
+/
+/ [1/6 files][131.4 MiB/219.3 MiB]  59% Done  14.6 MiB/s ETA 00:00:06           
+-
+\
+\ [1/6 files][145.4 MiB/219.3 MiB]  66% Done  14.9 MiB/s ETA 00:00:05           
+|
+/
+/ [1/6 files][162.1 MiB/219.3 MiB]  73% Done  15.9 MiB/s ETA 00:00:04           
+-
+- [1/6 files][180.4 MiB/219.3 MiB]  82% Done  16.6 MiB/s ETA 00:00:02           
+\
+\ [2/6 files][183.2 MiB/219.3 MiB]  83% Done  16.3 MiB/s ETA 00:00:02           
+|
+| [2/6 files][197.6 MiB/219.3 MiB]  90% Done  15.6 MiB/s ETA 00:00:01           
+| [3/6 files][199.1 MiB/219.3 MiB]  90% Done  15.7 MiB/s ETA 00:00:01           
+/
+-
+- [3/6 files][212.0 MiB/219.3 MiB]  96% Done  15.0 MiB/s ETA 00:00:00           
+- [4/6 files][214.3 MiB/219.3 MiB]  97% Done  15.3 MiB/s ETA 00:00:00           
+- [5/6 files][214.8 MiB/219.3 MiB]  97% Done  15.4 MiB/s ETA 00:00:00           
+\
+|
+| [5/6 files][218.4 MiB/219.3 MiB]  99% Done  13.1 MiB/s ETA 00:00:00           
+| [6/6 files][219.3 MiB/219.3 MiB] 100% Done  12.3 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:21:42,687 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:21:42,687 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:21:42,687 - INFO -   - Channels: 2
+2025-07-05 15:21:42,687 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:21:42,691 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:21:42,691 - INFO - Removed 5 non-mix files:
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:21:42,691 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:21:42,691 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:21:43,325 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:25:24,171 - INFO - Worker initialized successfully
+2025-07-05 15:25:24,171 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:25:28,529 - INFO - Created job 6d9e648c-8971-420c-88e0-5568c2ff832f for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:25:28,529 - INFO - Processing job 6d9e648c-8971-420c-88e0-5568c2ff832f from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:25:28,530 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmp6ellb2qe
+2025-07-05 15:25:28,531 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmp6ellb2qe
+2025-07-05 15:25:50,457 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][528.0 KiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 17.0 MiB/219.3 MiB]   7% Done                                    
+|
+/
+/ [0/6 files][ 35.3 MiB/219.3 MiB]  16% Done                                    
+-
+- [0/6 files][ 53.4 MiB/219.3 MiB]  24% Done                                    
+\
+|
+| [0/6 files][ 71.7 MiB/219.3 MiB]  32% Done                                    
+/
+/ [0/6 files][ 88.7 MiB/219.3 MiB]  40% Done                                    
+-
+\
+\ [0/6 files][102.4 MiB/219.3 MiB]  46% Done                                    
+|
+/
+/ [0/6 files][114.0 MiB/219.3 MiB]  51% Done                                    
+-
+- [0/6 files][116.5 MiB/219.3 MiB]  53% Done                                    
+\
+|
+| [0/6 files][126.8 MiB/219.3 MiB]  57% Done                                    
+/
+/ [1/6 files][128.8 MiB/219.3 MiB]  58% Done   8.0 MiB/s ETA 00:00:11           
+-
+- [1/6 files][133.8 MiB/219.3 MiB]  60% Done   6.2 MiB/s ETA 00:00:14           
+\
+|
+| [1/6 files][139.2 MiB/219.3 MiB]  63% Done   5.0 MiB/s ETA 00:00:16           
+/
+/ [1/6 files][147.4 MiB/219.3 MiB]  67% Done   7.0 MiB/s ETA 00:00:10           
+-
+\
+\ [1/6 files][158.5 MiB/219.3 MiB]  72% Done   7.0 MiB/s ETA 00:00:09           
+|
+/
+/ [1/6 files][168.8 MiB/219.3 MiB]  76% Done   8.0 MiB/s ETA 00:00:06           
+-
+- [1/6 files][181.4 MiB/219.3 MiB]  82% Done   9.4 MiB/s ETA 00:00:04           
+\
+|
+| [1/6 files][194.8 MiB/219.3 MiB]  88% Done  10.9 MiB/s ETA 00:00:02           
+| [2/6 files][200.0 MiB/219.3 MiB]  91% Done  11.3 MiB/s ETA 00:00:02           
+/
+-
+- [2/6 files][213.8 MiB/219.3 MiB]  97% Done  12.6 MiB/s ETA 00:00:00           
+- [3/6 files][213.8 MiB/219.3 MiB]  97% Done  12.6 MiB/s ETA 00:00:00           
+\
+\ [4/6 files][217.8 MiB/219.3 MiB]  99% Done  12.7 MiB/s ETA 00:00:00           
+\ [5/6 files][217.8 MiB/219.3 MiB]  99% Done  12.7 MiB/s ETA 00:00:00           
+\ [6/6 files][219.3 MiB/219.3 MiB] 100% Done  12.2 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:25:50,510 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:25:50,510 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:25:50,510 - INFO -   - Channels: 2
+2025-07-05 15:25:50,510 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:25:50,513 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:25:50,513 - INFO - Removed 5 non-mix files:
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:25:50,513 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:25:50,513 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:25:51,112 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:29:45,460 - INFO - Worker initialized successfully
+2025-07-05 15:29:45,460 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:29:47,346 - INFO - Processing job 3e60c15b-bd5d-42c8-ab20-db91af1280a9 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:29:47,346 - INFO - Created job 3e60c15b-bd5d-42c8-ab20-db91af1280a9 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:29:47,347 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmpnw0hjhn2
+2025-07-05 15:29:47,347 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmpnw0hjhn2
+2025-07-05 15:30:03,266 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][792.0 KiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 16.5 MiB/219.3 MiB]   7% Done                                    
+|
+/
+/ [0/6 files][ 37.1 MiB/219.3 MiB]  16% Done                                    
+-
+\
+\ [0/6 files][ 57.0 MiB/219.3 MiB]  25% Done                                    
+|
+| [0/6 files][ 73.5 MiB/219.3 MiB]  33% Done                                    
+/
+-
+- [0/6 files][ 89.2 MiB/219.3 MiB]  40% Done                                    
+\
+|
+| [0/6 files][108.8 MiB/219.3 MiB]  49% Done                                    
+/
+/ [0/6 files][129.4 MiB/219.3 MiB]  59% Done                                    
+-
+- [1/6 files][143.8 MiB/219.3 MiB]  65% Done                                    
+\
+|
+| [1/6 files][163.7 MiB/219.3 MiB]  74% Done                                    
+| [2/6 files][166.2 MiB/219.3 MiB]  75% Done                                    
+/
+/ [3/6 files][174.6 MiB/219.3 MiB]  79% Done                                    
+-
+- [3/6 files][187.3 MiB/219.3 MiB]  85% Done  18.9 MiB/s ETA 00:00:02           
+\
+|
+| [3/6 files][199.9 MiB/219.3 MiB]  91% Done  17.1 MiB/s ETA 00:00:01           
+/
+/ [4/6 files][208.9 MiB/219.3 MiB]  95% Done  16.5 MiB/s ETA 00:00:01           
+-
+\
+\ [4/6 files][217.9 MiB/219.3 MiB]  99% Done  14.0 MiB/s ETA 00:00:00           
+\ [5/6 files][218.1 MiB/219.3 MiB]  99% Done  14.0 MiB/s ETA 00:00:00           
+\ [6/6 files][219.3 MiB/219.3 MiB] 100% Done  13.3 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:30:03,315 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:30:03,315 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:30:03,315 - INFO -   - Channels: 2
+2025-07-05 15:30:03,315 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:30:03,317 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:30:03,317 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:30:03,317 - INFO - Removed 5 non-mix files:
+2025-07-05 15:30:03,317 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:30:03,317 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:30:03,318 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:30:03,318 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:30:03,318 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:30:03,318 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/tmpnw0hjhn2/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:30:03,318 - INFO - Processing folder: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:30:03,318 - INFO - Starting processing: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:30:51,354 - INFO - 🔄 Stem Splitter started for: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:35:03,227 - INFO - ✅ Stem Splitter completed. Starting export: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:35:07,801 - INFO - 📁 Export started for: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:35:51,950 - INFO - ✅ Ariana_Grande_-_Greedy_(24_Stems) processed and exported!
+2025-07-05 15:35:51,953 - ERROR - No exported files found for Ariana_Grande_-_Greedy_(24_Stems) in /Users/moises/Music/Logic
+2025-07-05 15:35:51,970 - INFO - Cleaned up folder: /Users/moises/Music/Logic
+2025-07-05 15:35:51,971 - INFO - Job 3e60c15b-bd5d-42c8-ab20-db91af1280a9 completed with status: completed_with_errors
+2025-07-05 15:35:52,621 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0
+2025-07-05 15:52:38,251 - INFO - Worker initialized successfully
+2025-07-05 15:52:38,252 - INFO - Worker started and waiting for jobs...
+2025-07-05 15:52:40,487 - INFO - Processing job 5d7b7612-de20-429c-a271-023cf5e79498 from bucket: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:52:40,487 - INFO - Executing command: gsutil -m cp -r gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) /Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t
+2025-07-05 15:52:40,487 - INFO - Downloading from gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems) to /Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t
+2025-07-05 15:52:40,487 - INFO - Created job 5d7b7612-de20-429c-a271-023cf5e79498 for bucket path: benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:53:01,671 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_bass.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_mix.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_drums.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_other.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+Copying gs://benchmarks-musicai-gt/all-5stems-gtr-separate-channels/Ariana_Grande_-_Greedy_(24_Stems)/Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav...
+/ [0/6 files][    0.0 B/219.3 MiB]   0% Done                                    
+-
+- [0/6 files][  1.0 MiB/219.3 MiB]   0% Done                                    
+\
+\ [0/6 files][ 17.8 MiB/219.3 MiB]   8% Done                                    
+|
+/
+/ [0/6 files][ 29.1 MiB/219.3 MiB]  13% Done                                    
+-
+\
+\ [0/6 files][ 41.2 MiB/219.3 MiB]  18% Done                                    
+|
+| [0/6 files][ 52.1 MiB/219.3 MiB]  23% Done                                    
+/
+-
+- [0/6 files][ 67.0 MiB/219.3 MiB]  30% Done                                    
+\
+|
+| [0/6 files][ 79.7 MiB/219.3 MiB]  36% Done                                    
+/
+/ [0/6 files][ 93.8 MiB/219.3 MiB]  42% Done                                    
+-
+\
+\ [0/6 files][108.8 MiB/219.3 MiB]  49% Done                                    
+|
+| [1/6 files][113.9 MiB/219.3 MiB]  51% Done                                    
+/
+/ [1/6 files][128.1 MiB/219.3 MiB]  58% Done                                    
+/ [2/6 files][129.6 MiB/219.3 MiB]  59% Done  13.7 MiB/s ETA 00:00:07           
+-
+\
+\ [2/6 files][138.1 MiB/219.3 MiB]  62% Done  13.1 MiB/s ETA 00:00:06           
+|
+| [2/6 files][151.2 MiB/219.3 MiB]  68% Done  12.9 MiB/s ETA 00:00:05           
+/
+-
+- [2/6 files][168.0 MiB/219.3 MiB]  76% Done  13.9 MiB/s ETA 00:00:04           
+\
+|
+| [2/6 files][183.7 MiB/219.3 MiB]  83% Done  13.0 MiB/s ETA 00:00:03           
+| [3/6 files][188.0 MiB/219.3 MiB]  85% Done  13.8 MiB/s ETA 00:00:02           
+/
+/ [4/6 files][193.7 MiB/219.3 MiB]  88% Done  13.6 MiB/s ETA 00:00:02           
+-
+- [4/6 files][201.7 MiB/219.3 MiB]  91% Done  13.2 MiB/s ETA 00:00:01           
+\
+\ [5/6 files][207.0 MiB/219.3 MiB]  94% Done  13.1 MiB/s ETA 00:00:01           
+|
+/
+/ [5/6 files][211.2 MiB/219.3 MiB]  96% Done  11.1 MiB/s ETA 00:00:01           
+-
+- [5/6 files][215.0 MiB/219.3 MiB]  98% Done   8.4 MiB/s ETA 00:00:01           
+\
+|
+| [6/6 files][219.3 MiB/219.3 MiB] 100% Done   7.2 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.3 MiB.                                    
+
+2025-07-05 15:53:01,740 - INFO - WAV file verified: Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:53:01,740 - INFO -   - Sample rate: 44100 Hz
+2025-07-05 15:53:01,740 - INFO -   - Channels: 2
+2025-07-05 15:53:01,740 - INFO -   - Duration: 217.31 seconds
+2025-07-05 15:53:01,744 - INFO - Kept 1 valid _mix.wav files:
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix.wav
+2025-07-05 15:53:01,744 - INFO - Removed 5 non-mix files:
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_vocals.wav
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_drums.wav
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_bass.wav
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_other.wav
+2025-07-05 15:53:01,744 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_guitar.wav
+2025-07-05 15:53:01,744 - INFO - Downloaded files to temp folder: /Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:53:01,744 - INFO - Processing folder: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:53:01,744 - INFO - Starting processing: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:53:37,587 - INFO - 🔄 Stem Splitter started for: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:57:37,591 - INFO - ✅ Stem Splitter completed. Starting export: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:57:40,998 - INFO - 📁 Export started for: Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:58:25,149 - INFO - ✅ Ariana_Grande_-_Greedy_(24_Stems) processed and exported!
+2025-07-05 15:58:25,150 - INFO - Found 6 exported files for Ariana_Grande_-_Greedy_(24_Stems)
+2025-07-05 15:58:25,154 - INFO - Found 6 stems to upload:
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Drums).wav
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Piano).wav
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Other).wav
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Bass).wav
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Guitar).wav
+2025-07-05 15:58:25,154 - INFO -   - Ariana_Grande_-_Greedy_(24_Stems)_mix (Vocals).wav
+2025-07-05 15:58:25,154 - INFO - Executing upload command: gsutil -m cp -r /Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems gs://benchmarks-musicai-gt/teste
+2025-07-05 15:58:53,154 - WARNING - gsutil stderr: If you experience problems with multiprocessing on MacOS, they might be related to https://bugs.python.org/issue33725. You can disable multiprocessing by editing your .boto config or by adding the following flag to your command: `-o "GSUtil:parallel_process_count=1"`. Note that multithreading is still available even if you disable multiprocessing.
+
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Piano).wav [Content-Type=audio/x-wav]...
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Drums).wav [Content-Type=audio/x-wav]...
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Other).wav [Content-Type=audio/x-wav]...
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Guitar).wav [Content-Type=audio/x-wav]...
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Bass).wav [Content-Type=audio/x-wav]...
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+Copying file:///Users/moises/Documents/logic_processa/logic_worker/temp/tmp9_jps77t/Ariana_Grande_-_Greedy_(24_Stems)/stems/Ariana_Grande_-_Greedy_(24_Stems)_mix (Vocals).wav [Content-Type=audio/x-wav]...
+/ [0/6 files][    0.0 B/219.8 MiB]   0% Done                                    
+-
+- [0/6 files][792.0 KiB/219.8 MiB]   0% Done                                    
+\
+\ [0/6 files][ 13.2 MiB/219.8 MiB]   5% Done                                    
+|
+/
+/ [0/6 files][ 17.8 MiB/219.8 MiB]   8% Done                                    
+-
+- [0/6 files][ 25.8 MiB/219.8 MiB]  11% Done                                    
+\
+|
+| [0/6 files][ 35.8 MiB/219.8 MiB]  16% Done                                    
+/
+-
+- [0/6 files][ 45.6 MiB/219.8 MiB]  20% Done                                    
+\
+\ [0/6 files][ 55.4 MiB/219.8 MiB]  25% Done                                    
+|
+/
+/ [0/6 files][ 66.3 MiB/219.8 MiB]  30% Done                                    
+-
+\
+\ [0/6 files][ 74.8 MiB/219.8 MiB]  34% Done                                    
+|
+| [0/6 files][ 84.0 MiB/219.8 MiB]  38% Done                                    
+/
+-
+- [0/6 files][ 95.1 MiB/219.8 MiB]  43% Done   9.4 MiB/s ETA 00:00:13           
+\
+|
+| [0/6 files][103.9 MiB/219.8 MiB]  47% Done   9.2 MiB/s ETA 00:00:13           
+/
+/ [0/6 files][112.9 MiB/219.8 MiB]  51% Done   9.1 MiB/s ETA 00:00:12           
+-
+\
+\ [0/6 files][122.0 MiB/219.8 MiB]  55% Done   9.1 MiB/s ETA 00:00:11           
+|
+/
+/ [0/6 files][131.0 MiB/219.8 MiB]  59% Done   8.6 MiB/s ETA 00:00:10           
+-
+- [0/6 files][139.5 MiB/219.8 MiB]  63% Done   8.3 MiB/s ETA 00:00:10           
+\
+|
+| [0/6 files][148.0 MiB/219.8 MiB]  67% Done   8.3 MiB/s ETA 00:00:09           
+/
+-
+- [0/6 files][158.3 MiB/219.8 MiB]  72% Done   8.8 MiB/s ETA 00:00:07           
+\
+\ [0/6 files][169.1 MiB/219.8 MiB]  76% Done   9.4 MiB/s ETA 00:00:05           
+|
+/
+/ [0/6 files][180.2 MiB/219.8 MiB]  81% Done   9.7 MiB/s ETA 00:00:04           
+-
+- [0/6 files][186.9 MiB/219.8 MiB]  85% Done   9.4 MiB/s ETA 00:00:04           
+\
+|
+| [0/6 files][200.1 MiB/219.8 MiB]  91% Done  10.2 MiB/s ETA 00:00:02           
+/
+-
+- [0/6 files][208.3 MiB/219.8 MiB]  94% Done   9.5 MiB/s ETA 00:00:01           
+\
+|
+| [0/6 files][216.4 MiB/219.8 MiB]  98% Done   9.1 MiB/s ETA 00:00:00           
+| [1/6 files][216.6 MiB/219.8 MiB]  98% Done   9.1 MiB/s ETA 00:00:00           
+| [2/6 files][217.2 MiB/219.8 MiB]  98% Done   8.8 MiB/s ETA 00:00:00           
+| [3/6 files][218.0 MiB/219.8 MiB]  99% Done   8.7 MiB/s ETA 00:00:00           
+| [4/6 files][218.2 MiB/219.8 MiB]  99% Done   8.6 MiB/s ETA 00:00:00           
+| [5/6 files][218.7 MiB/219.8 MiB]  99% Done   8.5 MiB/s ETA 00:00:00           
+/
+/ [6/6 files][219.8 MiB/219.8 MiB] 100% Done   7.3 MiB/s ETA 00:00:00           
+Operation completed over 6 objects/219.8 MiB.                                    
+
+2025-07-05 15:58:53,181 - INFO - Cleaned up folder: /Users/moises/Music/Logic
+2025-07-05 15:58:53,181 - INFO - Job 5d7b7612-de20-429c-a271-023cf5e79498 completed with status: completed
+2025-07-05 15:58:53,763 - INFO - Callback sent successfully to https://webhook.site/196e6097-0083-405a-b6c0-287f2e0702c0

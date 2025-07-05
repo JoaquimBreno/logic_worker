@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Exemplo de uso da API Logic Worker
+Example usage of the Logic Worker API with GCP bucket paths
 """
 
 import asyncio
@@ -10,88 +10,99 @@ from datetime import datetime
 
 API_BASE_URL = "http://localhost:3000"
 
-async def create_job(input_folder, callback_url=None):
-    """Criar um novo job de processamento"""
+async def create_job(input_bucket_path: str, output_bucket_path: str, callback_url=None):
+    """Create a new processing job using GCP bucket paths"""
     async with aiohttp.ClientSession() as session:
         data = {
-            "input_folder": input_folder,
+            "input_bucket_path": input_bucket_path,
+            "output_bucket_path": output_bucket_path,
             "callback_url": callback_url
         }
         
         async with session.post(f"{API_BASE_URL}/process", json=data) as response:
             if response.status == 200:
                 result = await response.json()
-                print(f"✅ Job criado com sucesso!")
+                print(f"✅ Job created successfully!")
                 print(f"   Execution ID: {result['execution_id']}")
                 print(f"   Status: {result['status']}")
-                print(f"   Pasta: {result['folder_name']}")
+                print(f"   Folder: {result['folder_name']}")
+                print(f"   Input bucket: {result['input_bucket_path']}")
+                print(f"   Output bucket: {result['output_bucket_path']}")
                 return result['execution_id']
             else:
                 error = await response.text()
-                print(f"❌ Erro ao criar job: {error}")
+                print(f"❌ Error creating job: {error}")
                 return None
 
 async def check_status(execution_id):
-    """Verificar status de um job"""
+    """Check status of a job"""
     async with aiohttp.ClientSession() as session:
         async with session.get(f"{API_BASE_URL}/status/{execution_id}") as response:
             if response.status == 200:
                 result = await response.json()
-                print(f"📊 Status do Job {execution_id}:")
+                print(f"📊 Status of Job {execution_id}:")
                 print(f"   Status: {result['status']}")
-                print(f"   Pasta: {result['folder_name']}")
-                print(f"   Erros: {len(result['errors'])}")
-                print(f"   Criado em: {result['created_at']}")
+                print(f"   Folder: {result['folder_name']}")
+                print(f"   Errors: {len(result['errors'])}")
+                print(f"   Created at: {result['created_at']}")
+                
+                if result.get('processed_stems_path'):
+                    print(f"   Processed stems: {result['processed_stems_path']}")
                 
                 if result['results']:
                     for res in result['results']:
-                        export_status = "✅ Exportado" if res.get('export_verified') else "❌ Erro na exportação"
-                        print(f"   Resultado: {res['status']} - {export_status}")
+                        if 'uploaded_stems' in res:
+                            upload_info = res['uploaded_stems']
+                            print(f"   Upload status: {upload_info['status']}")
+                            if upload_info['status'] == 'success':
+                                print(f"   Uploaded files: {len(upload_info['uploaded_files'])}")
+                                for file in upload_info['uploaded_files']:
+                                    print(f"     - {file}")
                 
                 return result
             else:
                 error = await response.text()
-                print(f"❌ Erro ao verificar status: {error}")
+                print(f"❌ Error checking status: {error}")
                 return None
 
-async def scan_folder(folder_path):
-    """Escanear pasta para ver se pode ser processada"""
+async def scan_folder(bucket_path: str):
+    """Scan a GCP bucket folder to check if it can be processed"""
     async with aiohttp.ClientSession() as session:
-        params = {"folder_path": folder_path}
+        params = {"bucket_path": bucket_path}
         async with session.get(f"{API_BASE_URL}/scan", params=params) as response:
             if response.status == 200:
                 result = await response.json()
-                print(f"🔍 Scan da pasta {folder_path}:")
+                print(f"🔍 Scan of bucket folder {bucket_path}:")
                 print(f"   Status: {result['status']}")
-                print(f"   Processável: {'✅ Sim' if result.get('processable') else '❌ Não'}")
+                print(f"   Processable: {'✅ Yes' if result.get('processable') else '❌ No'}")
                 
                 if result.get('folder_info'):
                     folder = result['folder_info']
-                    print(f"   Nome da pasta: {folder['name']}")
-                    print(f"   Arquivos _mix.wav: {len(folder['mix_files'])}")
-                    print(f"   Total de .wav: {folder['total_wav_files']}")
+                    print(f"   Folder name: {folder['name']}")
+                    print(f"   _mix.wav files: {len(folder['mix_files'])}")
+                    print(f"   Total .wav files: {folder['total_wav_files']}")
                 
                 return result
             else:
                 error = await response.text()
-                print(f"❌ Erro ao escanear pasta: {error}")
+                print(f"❌ Error scanning folder: {error}")
                 return None
 
 async def health_check():
-    """Verificar se a API está funcionando"""
+    """Check if the API is running"""
     async with aiohttp.ClientSession() as session:
         async with session.get(f"{API_BASE_URL}/health") as response:
             if response.status == 200:
                 result = await response.json()
-                print(f"✅ API está funcionando: {result['message']}")
+                print(f"✅ API is running: {result['message']}")
                 return True
             else:
-                print(f"❌ API não está respondendo")
+                print(f"❌ API is not responding")
                 return False
 
 async def monitor_job(execution_id, interval=10):
-    """Monitorar um job até sua conclusão"""
-    print(f"🔄 Monitorando job {execution_id}...")
+    """Monitor a job until completion"""
+    print(f"🔄 Monitoring job {execution_id}...")
     
     while True:
         status = await check_status(execution_id)
@@ -100,65 +111,64 @@ async def monitor_job(execution_id, interval=10):
             break
             
         if status['status'] in ['completed', 'completed_with_errors', 'error']:
-            print(f"🏁 Job concluído com status: {status['status']}")
+            print(f"🏁 Job completed with status: {status['status']}")
             
             if status['errors']:
-                print("⚠️ Erros encontrados:")
+                print("⚠️ Errors found:")
                 for error in status['errors']:
                     print(f"   - {error}")
             
-            # Verificar se exportação foi bem-sucedida
-            if status['results']:
-                for result in status['results']:
-                    if result.get('export_verified'):
-                        print("✅ Exportação verificada com sucesso!")
-                    else:
-                        print("❌ Falha na verificação de exportação")
+            # Check if stems were processed and uploaded
+            if status.get('processed_stems_path'):
+                print(f"✅ Stems available at: {status['processed_stems_path']}")
+            else:
+                print("❌ No processed stems path available")
             
             break
             
         await asyncio.sleep(interval)
 
 async def example_workflow():
-    """Exemplo completo de workflow"""
-    print("🎵 Exemplo de uso da API Logic Worker")
+    """Complete example workflow"""
+    print("🎵 Logic Worker API Example with GCP")
     print("====================================")
     
-    # 1. Verificar se a API está funcionando
+    # 1. Check if API is running
     if not await health_check():
         return
     
-    # 2. Pasta de exemplo (ajuste conforme necessário)
-    input_folder = "/Users/moises/Documents/logic_processa/Tracklib - Won't Be Around_mix"
-    callback_url = "https://your-callback-url.com/webhook"  # Opcional
+    # 2. Example bucket paths (adjust as needed)
+    input_bucket = "your-bucket/input/track-to-process"
+    output_bucket = "your-bucket/output/processed-stems"
+    callback_url = "https://your-callback-url.com/webhook"  # Optional
     
-    # 3. Escanear pasta primeiro
-    print("\n1. Escaneando pasta...")
-    scan_result = await scan_folder(input_folder)
+    # 3. Scan bucket folder first
+    print("\n1. Scanning bucket folder...")
+    scan_result = await scan_folder(input_bucket)
     
     if not scan_result or not scan_result.get('processable'):
-        print("❌ Pasta não pode ser processada")
+        print("❌ Folder cannot be processed")
         return
     
-    # 4. Criar job
-    print("\n2. Criando job...")
-    execution_id = await create_job(input_folder, callback_url)
+    # 4. Create job
+    print("\n2. Creating job...")
+    execution_id = await create_job(input_bucket, output_bucket, callback_url)
     
     if not execution_id:
         return
     
-    # 5. Monitorar job
-    print("\n3. Monitorando progresso...")
+    # 5. Monitor job
+    print("\n3. Monitoring progress...")
     await monitor_job(execution_id)
     
-    print("\n✅ Workflow concluído!")
+    print("\n✅ Workflow completed!")
 
 if __name__ == "__main__":
-    # Exemplo básico
+    # Basic example
     asyncio.run(example_workflow())
     
-    # Ou use funções individuais:
+    # Or use individual functions:
     # asyncio.run(health_check())
-    # asyncio.run(scan_folder("/path/to/folder"))
-    # execution_id = asyncio.run(create_job("/path/to/folder"))
+    # asyncio.run(scan_folder("your-bucket/input/folder"))
+    # execution_id = asyncio.run(create_job("input-bucket/folder", "output-bucket/folder"))
     # asyncio.run(check_status(execution_id)) 
