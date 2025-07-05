@@ -171,7 +171,7 @@ class LogicWorker:
             
             # Download from GCP bucket
             try:
-                temp_path, temp_dir = download_gcp_folder(input_bucket_path)
+                folder_name, temp_path, temp_dir = download_gcp_folder(input_bucket_path)
                 processing_job.temp_dir = temp_dir
                 print(f"Temp dir: {temp_dir}")
                 print(f"Temp path: {temp_path}")
@@ -262,7 +262,8 @@ class LogicWorker:
                         # Upload stems to GCP
                         upload_result = upload_stems_to_gcp(
                             local_folder=temp_stems_folder,
-                            bucket_path=output_bucket_path
+                            bucket_path=output_bucket_path,
+                            folder_name=folder_name
                         )
                         
                         if upload_result["status"] == "success":

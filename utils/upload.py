@@ -9,7 +9,8 @@ logger = logging.getLogger(__name__)
 def upload_stems_to_gcp(
     local_folder: str,
     bucket_path: str,
-    stems_pattern: str = "*.wav"
+    stems_pattern: str = "*.wav",
+    folder_name: str = None
 ) -> Dict[str, Any]:
     """
     Upload processed stems from local folder to GCP bucket.
@@ -35,6 +36,9 @@ def upload_stems_to_gcp(
         # Construct gsutil path
         gs_path = f"gs://{bucket_path}"
         
+        if folder_name:
+            gs_path = f"{gs_path}/{folder_name}"
+            
         # Log what we're uploading
         logger.info(f"Found {len(stem_files)} stems to upload:")
         for stem in stem_files:

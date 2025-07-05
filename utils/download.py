@@ -136,7 +136,7 @@ def download_gcp_folder(
         
         folder_name = bucket_path.rstrip('/').split('/')[-1]
         temp_path = os.path.join(temp_path, folder_name)
-        return temp_path, temp_dir
+        return folder_name, temp_path, temp_dir
         
     except Exception as e:
         logger.error(f"Error downloading from GCP bucket: {str(e)}")
